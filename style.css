@@ -1,0 +1,233 @@
+/* =============== ROOT COLOR  =============== */
+:root[data-theme="light"] {
+  --bg-color: linear-gradient(to right, #f0f2f5, #d9e4f5);
+  --text-color: #333;
+  --tbg-color: linear-gradient(to right, #282828, #1b212a);
+}
+
+:root[data-theme="dark"] {
+  --bg-color: linear-gradient(to right, #282828, #1b212a);
+  --text-color: #fff;
+  --tbg-color: linear-gradient(to right, #f0f2f5, #d9e4f5);
+}
+
+
+/* =============== GLOBAL STYLES =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+}
+
+/* =============== CONTAINER =============== */
+.container {
+  width: 440px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+/* =============== HEADER =============== */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* =============== INPUT + BUTTONS =============== */
+#taskInput {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* =============== INPUT + BUTTONS  =============== */
+.inputRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+#addBtn {
+  background-color: #7abd18;
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+#addBtn:hover {
+  background-color: #5c990f;
+}
+
+#chngTheam {
+  background: var(--tbg-color);
+  padding: 10px 15px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+#chngTheam:hover {
+  opacity: 0.9;
+}
+
+/* =============== TASK LIST =============== */
+ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 15px;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+ul li:hover {
+  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+span {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 15px;
+  color: #222;
+}
+
+/* =============== BUTTONS INSIDE LIST =============== */
+.editBtn {
+  background-color: #007bff;
+  margin-right: 5px;
+}
+
+.editBtn:hover {
+  background-color: #005ecb;
+}
+
+.delBtn {
+  background-color: #dc3545;
+}
+
+.delBtn:hover {
+  background-color: #b81f2b;
+}
+
+/* =============== COMPLETED TASK STYLE =============== */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+/* =============== STATUS BUTTONS =============== */
+.status {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.status button {
+  flex: 1;
+  margin: 0 5px;
+  background: #eee;
+  color: #333;
+}
+
+.activeFilter {
+  border: 2px solid #000;
+  background: #d2e0ff;
+}
+
+/* =============== CLEAR BUTTON =============== */
+.clrBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#clrBtn {
+  width: 40%;
+  background-color: #e63946;
+  display: none;
+}
+
+#clrBtn:hover {
+  background-color: #c91828;
+}
+
+/* =============== RESPONSIVE DESIGN =============== */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+  .inputRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #taskInput, #addBtn, #chngTheam {
+    width: 100%;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status {
+    flex-direction: column;
+  }
+
+  .status button {
+    margin: 5px 0;
+  }
+}
